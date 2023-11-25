@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}lOJINA {%endblock%}
+
+{% block conteudo %}
+<div class='row'>
+    <div class='col-12'>
+        <h2>Produtos</h2>
+        {% for produto in produtos %}
+            <a href="{% url 'produto' produto.pk %}">{{produto.nome}}</a>
+            <p>{{ produto.nome }} - R${{produto.preco}}</p>
+        {% endfor%}
+    </div>
+
+    <div class='col-6'>
+      <img src="{% static 'img\erro-teste.png' %}" alt="" />
+    </div>
+
+</div>
+{% endblock conteudo %}

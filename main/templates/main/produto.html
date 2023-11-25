@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block titulo %} {{produto.nome}} {%endblock titulo%}
+
+{% block conteudo %}
+        <div class='row'>
+            <div class='col-12'>
+               <h2>{{produto.nome}}</h2>
+               {%  if produto.descricao %}
+                    <p>{{produto.descricao}}</p>
+                {% else %}
+                <p> Não tem descrição </p>
+                {% endif %}
+            </div>
+        </div>
+{% endblock conteudo %}
